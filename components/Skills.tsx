@@ -1,122 +1,62 @@
-const SKILL_GROUPS = [
+"use client";
+
+import { motion } from "framer-motion";
+
+const GROUPS = [
   {
-    title: "AI & LLM",
-    icon: "🤖",
-    color: "#22d3ee",
-    skills: [
-      "Anthropic Claude API",
-      "LLM Application Development",
-      "Prompt Engineering",
-      "Multi-Agent Systems",
-      "AI Workflow Design",
-    ],
+    category: "AI & LLM",
+    items: ["Anthropic Claude API", "LLM Application Development", "Prompt Engineering", "Multi-Agent Systems", "AI Workflow Design"],
   },
   {
-    title: "AI Architecture",
-    icon: "🏗️",
-    color: "#a78bfa",
-    skills: [
-      "RAG Pipelines",
-      "Vector Databases",
-      "Pinecone & Chroma",
-      "Semantic Search",
-      "Embedding Systems",
-      "AWS RAG",
-      "Amazon Titan Embeddings v2",
-    ],
+    category: "AI Architecture",
+    items: ["RAG Pipelines", "Vector Databases", "Pinecone & Chroma", "Semantic Search", "Embedding Systems", "AWS RAG", "Amazon Titan Embeddings v2"],
   },
   {
-    title: "Development",
-    icon: "⚙️",
-    color: "#34d399",
-    skills: [
-      "Python",
-      "Flutter / Dart",
-      "Ruby on Rails",
-      "Angular",
-      "REST APIs",
-      "Firebase",
-      "CI/CD Pipelines",
-      "Clean Architecture",
-    ],
+    category: "Development",
+    items: ["Python", "Flutter / Dart", "Ruby on Rails", "Angular", "REST APIs", "Firebase", "CI/CD Pipelines", "Clean Architecture"],
   },
   {
-    title: "Strengths",
-    icon: "✦",
-    color: "#f59e0b",
-    skills: [
-      "Problem-solving",
-      "Solution Design",
-      "Scalable Architecture",
-      "Cross-platform Dev",
-      "Real-time Systems",
-      "SOLID Principles",
-    ],
+    category: "Strengths",
+    items: ["Problem-solving", "Solution Design", "Scalable Architecture", "Cross-platform Development", "Real-time Systems", "SOLID Principles"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#0a0e18]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="font-mono text-[#22d3ee] text-sm">02.</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Core Skills</h2>
-          <div className="flex-1 h-px bg-[#1e2d3d]" />
-        </div>
+    <section id="skills" className="py-32" style={{ borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SKILL_GROUPS.map((group) => (
-            <div
-              key={group.title}
-              className="border border-[#1e2d3d] rounded-xl p-6 bg-[#0f1621] hover:border-[#22d3ee]/30 transition-colors duration-300 group"
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}
+        >
+          <div className="section-label">
+            <span>02</span>
+            <span>Core Skills</span>
+          </div>
+        </motion.div>
+
+        <div>
+          {GROUPS.map((group, i) => (
+            <motion.div
+              key={group.category}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="grid md:grid-cols-[220px_1fr] gap-4 md:gap-16 py-7"
+              style={{ borderBottom: "1px solid var(--border)" }}
             >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">{group.icon}</span>
-                <h3
-                  className="font-semibold text-sm"
-                  style={{ color: group.color }}
-                >
-                  {group.title}
-                </h3>
+              <div
+                className="text-[11px] font-medium tracking-[0.12em] uppercase pt-0.5"
+                style={{ color: "var(--muted)" }}
+              >
+                {group.category}
               </div>
-              <ul className="space-y-2">
-                {group.skills.map((skill) => (
-                  <li key={skill} className="flex items-center gap-2 text-sm text-[#94a3b8]">
-                    <span className="w-1 h-1 rounded-full bg-[#1e2d3d] group-hover:bg-[#22d3ee]/40 transition-colors" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Tech badges row */}
-        <div className="mt-10 flex flex-wrap gap-2">
-          {[
-            "Anthropic Claude",
-            "Python",
-            "Ruby on Rails",
-            "Angular",
-            "Flutter",
-            "Dart",
-            "AWS",
-            "Pinecone",
-            "Chroma",
-            "Firebase",
-            "REST API",
-            "Zoom SDK",
-            "JWT",
-            "Realm DB",
-            "CI/CD",
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-xs font-mono border border-[#1e2d3d] text-[#64748b] rounded-full hover:border-[#22d3ee]/40 hover:text-[#94a3b8] transition-colors"
-            >
-              {tech}
-            </span>
+              <div className="text-sm leading-relaxed" style={{ color: "#aaaaaa" }}>
+                {group.items.join("  ·  ")}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, type Variants } from "framer-motion";
+
 const AI_BULLETS = [
   "Architected a semantic search RAG pipeline on AWS using Amazon Titan Embedding v2 and Anthropic Claude API over a corpus of 200+ documents, with tiered retrieval fallback and confidence scoring.",
   "Built an AI-powered pricing recommendation system using 3 years of historical data to suggest prices for new client engagements.",
@@ -18,10 +22,13 @@ const DEV_BULLETS = [
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm text-[#94a3b8] leading-relaxed">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#22d3ee]/50 shrink-0" />
+    <ul className="space-y-5">
+      {items.map((item, i) => (
+        <li key={i} className="flex gap-4 text-[13px] leading-relaxed" style={{ color: "#aaaaaa" }}>
+          <span
+            className="mt-2 w-1 h-1 rounded-full shrink-0"
+            style={{ background: "var(--accent)", opacity: 0.6 }}
+          />
           {item}
         </li>
       ))}
@@ -29,53 +36,67 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
+const fade: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
+};
+
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 max-w-6xl mx-auto px-6">
-      <div className="flex items-center gap-4 mb-12">
-        <span className="font-mono text-[#22d3ee] text-sm">03.</span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white">Experience</h2>
-        <div className="flex-1 h-px bg-[#1e2d3d]" />
-      </div>
+    <section id="experience" className="py-32" style={{ borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-      {/* Timeline item */}
-      <div className="relative pl-6 border-l border-[#1e2d3d]">
-        <div className="absolute -left-1.5 top-1 w-3 h-3 rounded-full bg-[#22d3ee]" />
-
-        <div className="mb-2">
-          <h3 className="text-lg font-semibold text-white">
-            Senior Full Stack &{" "}
-            <span className="text-[#22d3ee]">AI Developer</span>
-          </h3>
-          <div className="flex flex-wrap items-center gap-3 mt-1">
-            <span className="text-sm text-[#94a3b8]">Jombay · Pune, India</span>
-            <span className="w-1 h-1 rounded-full bg-[#1e2d3d]" />
-            <span className="font-mono text-xs text-[#64748b]">Jul 2021 – Present</span>
-            <span className="px-2 py-0.5 text-xs bg-[#22d3ee]/10 text-[#22d3ee] border border-[#22d3ee]/20 rounded-full">
-              4+ years
-            </span>
+        <motion.div variants={fade} initial="hidden" whileInView="show" viewport={{ once: true }}>
+          <div className="section-label">
+            <span>03</span>
+            <span>Experience</span>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {/* AI Work */}
-          <div className="border border-[#1e2d3d] rounded-xl p-5 bg-[#0f1621]">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-base">🤖</span>
-              <h4 className="font-semibold text-sm text-[#22d3ee]">AI & LLM Work</h4>
+        <motion.div variants={fade} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
+          {/* Role header */}
+          <div className="grid md:grid-cols-[200px_1fr] gap-6 md:gap-16 mb-14">
+            <div className="space-y-1">
+              <div className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "var(--muted)" }}>
+                Jul 2021 — Present
+              </div>
+              <div className="text-[10px] tracking-[0.15em] uppercase" style={{ color: "var(--muted)" }}>
+                4+ years
+              </div>
             </div>
-            <BulletList items={AI_BULLETS} />
+            <div>
+              <h3
+                className="font-display font-bold mb-1.5"
+                style={{ fontSize: "clamp(22px, 2.5vw, 30px)", color: "var(--fg)" }}
+              >
+                Senior Full Stack & AI Developer
+              </h3>
+              <p className="text-sm" style={{ color: "var(--muted)" }}>Jombay · Pune, India</p>
+            </div>
           </div>
 
-          {/* App Dev */}
-          <div className="border border-[#1e2d3d] rounded-xl p-5 bg-[#0f1621]">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-base">📱</span>
-              <h4 className="font-semibold text-sm text-[#a78bfa]">Application Development</h4>
+          {/* Bullets */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+            <div>
+              <div
+                className="text-[10px] tracking-[0.15em] uppercase mb-6 pb-4"
+                style={{ color: "var(--muted)", borderBottom: "1px solid var(--border)" }}
+              >
+                AI & LLM Work
+              </div>
+              <BulletList items={AI_BULLETS} />
             </div>
-            <BulletList items={DEV_BULLETS} />
+            <div>
+              <div
+                className="text-[10px] tracking-[0.15em] uppercase mb-6 pb-4"
+                style={{ color: "var(--muted)", borderBottom: "1px solid var(--border)" }}
+              >
+                Application Development
+              </div>
+              <BulletList items={DEV_BULLETS} />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

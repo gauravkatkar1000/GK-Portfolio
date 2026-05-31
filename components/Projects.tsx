@@ -1,9 +1,13 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const PROJECTS = [
   {
     number: "01",
-    title: "AI Knowledge Base — Live Demo",
-    emoji: "🤖",
-    color: "#22d3ee",
+    title: "AI Knowledge Base",
+    subtitle: "Live Demo",
+    live: true,
     demo: "https://ai-knowledge-base-gk1000.streamlit.app",
     description:
       "A fully working RAG chatbot you can try right now. Ask it anything about AI, LLMs, RAG, or transformers — it retrieves the most relevant chunks from 7 Wikipedia articles using cosine similarity, then synthesises a cited answer via Groq's LLaMA 3.3 70B.",
@@ -18,10 +22,11 @@ const PROJECTS = [
   {
     number: "02",
     title: "Intelligent Knowledge Retrieval Engine",
-    emoji: "🔍",
-    color: "#a78bfa",
+    subtitle: null,
+    live: false,
+    demo: null,
     description:
-      "A semantic search system over 200+ enterprise knowledge documents using RAG on AWS. Built end-to-end with Amazon Titan Embedding v2 for ingestion and Anthropic Claude API for response synthesis. Features a multi-dimensional confidence scoring engine that ranks results across use case, industry, experience level, and engagement type — with 6-tier fallback logic to always return results.",
+      "A semantic search system over 200+ enterprise knowledge documents using RAG on AWS. Built end-to-end with Amazon Titan Embedding v2 for ingestion and Anthropic Claude API for response synthesis. Features a multi-dimensional confidence scoring engine — with 6-tier fallback logic to always return results.",
     highlights: [
       "Amazon Titan Embedding v2 for document ingestion on AWS",
       "Anthropic Claude API for response synthesis",
@@ -33,10 +38,11 @@ const PROJECTS = [
   {
     number: "03",
     title: "AI-Powered Pricing Intelligence System",
-    emoji: "💰",
-    color: "#a78bfa",
+    subtitle: null,
+    live: false,
+    demo: null,
     description:
-      "A data-driven pricing recommendation engine trained on 3 years of historical engagement data. Uses AI to identify patterns across past engagements — industry, program type, audience size, delivery model — and surfaces the most comparable reference points for new proposals. Flags edge cases where historical coverage is insufficient.",
+      "A data-driven pricing recommendation engine trained on 3 years of historical engagement data. Uses AI to identify patterns across past engagements — industry, program type, audience size, delivery model — and surfaces the most comparable reference points for new proposals.",
     highlights: [
       "3 years of historical engagement data as training signal",
       "Pattern matching across industry, program type, audience size",
@@ -48,10 +54,11 @@ const PROJECTS = [
   {
     number: "04",
     title: "Recruitment Intelligence Pipeline",
-    emoji: "🧠",
-    color: "#34d399",
+    subtitle: null,
+    live: false,
+    demo: null,
     description:
-      "End-to-end AI recruitment system: JD upload → competency framework and rubric generation → resume ingestion → personalised interview question generation → async video interview (mobile app) → transcript scoring → candidate fit recommendation. Each layer — extraction, reasoning, scoring, recommendation — is independently testable.",
+      "End-to-end AI recruitment system: JD upload → competency framework and rubric generation → resume ingestion → personalised interview question generation → async video interview (mobile app) → transcript scoring → candidate fit recommendation.",
     highlights: [
       "JD parsing → competency framework and rubric generation",
       "Resume ingestion with personalised interview question generation",
@@ -64,82 +71,113 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-[#0a0e18]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="font-mono text-[#22d3ee] text-sm">04.</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">AI Projects</h2>
-          <div className="flex-1 h-px bg-[#1e2d3d]" />
-        </div>
+    <section id="projects" className="py-32" style={{ borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {PROJECTS.map((project) => (
-            <div
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}
+        >
+          <div className="section-label">
+            <span>04</span>
+            <span>AI Projects</span>
+          </div>
+        </motion.div>
+
+        <div>
+          {PROJECTS.map((project, i) => (
+            <motion.article
               key={project.number}
-              className="group border border-[#1e2d3d] rounded-2xl p-6 bg-[#0f1621] hover:border-[#22d3ee]/30 transition-all duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="group grid md:grid-cols-[100px_1fr] gap-6 md:gap-14 py-12 transition-all duration-500"
+              style={{ borderBottom: "1px solid var(--border)" }}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{project.emoji}</span>
-                  <span className="font-mono text-xs text-[#64748b]">{project.number}</span>
-                  {"demo" in project && (
-                    <span className="px-2 py-0.5 text-xs font-mono bg-[#22d3ee]/10 text-[#22d3ee] border border-[#22d3ee]/30 rounded-full">
-                      LIVE
-                    </span>
-                  )}
-                </div>
-                {"demo" in project ? (
-                  <a
-                    href={(project as { demo: string }).demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full border border-[#22d3ee]/30 flex items-center justify-center text-[#22d3ee] hover:bg-[#22d3ee]/10 transition-colors"
-                  >
-                    ↗
-                  </a>
-                ) : (
-                  <div className="w-8 h-8 rounded-full border border-[#1e2d3d] flex items-center justify-center text-[#64748b] group-hover:text-[#22d3ee] group-hover:border-[#22d3ee]/30 transition-colors">
-                    ↗
-                  </div>
-                )}
+              {/* Large dim project number */}
+              <div className="pt-0.5">
+                <span
+                  className="font-display font-black leading-none select-none transition-colors duration-500"
+                  style={{
+                    fontSize: "clamp(48px, 6vw, 80px)",
+                    color: "#2a2a2a",
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#3a3a3a")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#2a2a2a")}
+                >
+                  {project.number}
+                </span>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+              {/* Content */}
+              <div>
+                {/* Title row */}
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div className="flex flex-wrap items-baseline gap-3 mb-1.5">
+                      <h3
+                        className="font-display font-bold transition-colors duration-300"
+                        style={{ fontSize: "clamp(18px, 2vw, 24px)", color: "var(--fg)" }}
+                      >
+                        {project.title}
+                      </h3>
+                      {project.subtitle && (
+                        <span
+                          className="text-[10px] tracking-[0.15em] uppercase"
+                          style={{ color: "var(--accent)" }}
+                        >
+                          — {project.subtitle}
+                        </span>
+                      )}
+                    </div>
+                    {project.live && (
+                      <span
+                        className="inline-block text-[9px] tracking-[0.2em] uppercase px-2 py-0.5 rounded-sm"
+                        style={{ border: "1px solid var(--accent)", color: "var(--accent)", opacity: 0.8 }}
+                      >
+                        Live
+                      </span>
+                    )}
+                  </div>
 
-              <p className="text-sm text-[#94a3b8] leading-relaxed mb-5">{project.description}</p>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] tracking-[0.1em] uppercase flex items-center gap-1.5 transition-colors duration-300 shrink-0"
+                      style={{ color: "var(--muted)" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+                    >
+                      Try it Live <span className="text-sm">↗</span>
+                    </a>
+                  )}
+                </div>
 
-              <ul className="space-y-2 mb-6">
-                {project.highlights.map((h) => (
-                  <li key={h} className="flex gap-2 text-xs text-[#64748b]">
-                    <span style={{ color: project.color }} className="mt-1">›</span>
-                    {h}
-                  </li>
-                ))}
-              </ul>
+                {/* Description */}
+                <p
+                  className="text-sm leading-relaxed mb-6 max-w-2xl"
+                  style={{ color: "#aaaaaa" }}
+                >
+                  {project.description}
+                </p>
 
-              <div className="mt-auto">
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 text-xs font-mono rounded-md bg-[#07090f] border border-[#1e2d3d] text-[#64748b]"
+                      className="text-[10px] tracking-[0.06em] px-2.5 py-1 rounded-sm transition-colors duration-300"
+                      style={{ border: "1px solid rgba(255,255,255,0.1)", color: "var(--muted)" }}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                {"demo" in project && (
-                  <a
-                    href={(project as { demo: string }).demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 w-full justify-center px-4 py-2 bg-[#22d3ee] text-[#07090f] font-semibold rounded-lg text-sm hover:bg-[#06b6d4] transition-colors"
-                  >
-                    Try it Live →
-                  </a>
-                )}
               </div>
-            </div>
+            </motion.article>
           ))}
         </div>
       </div>
