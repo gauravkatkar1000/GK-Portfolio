@@ -18,6 +18,11 @@ export default function About() {
             scoring. I bring both the technical depth and the solution-design mindset that AI
             roles demand.
           </p>
+          <p>
+            I am particularly strong at identifying{" "}
+            <span className="text-white">where AI adds real value versus where simpler solutions suffice</span>{" "}
+            — and that judgement is what separates engineers who ship from those who over-engineer.
+          </p>
         </div>
 
         <div className="space-y-3">

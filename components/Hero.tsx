@@ -6,7 +6,7 @@ const ROLES = [
   "AI Solutions Developer",
   "GenAI Engineer",
   "LLM Specialist",
-  "Full Stack AI Developer",
+  "AI Engineer",
   "Multi-Agent Systems Builder",
 ];
 
