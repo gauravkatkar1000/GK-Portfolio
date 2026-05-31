@@ -97,8 +97,11 @@ export default function Skills() {
           {[
             "Anthropic Claude",
             "Python",
+            "Ruby on Rails",
+            "Angular",
             "Flutter",
             "Dart",
+            "AWS",
             "Pinecone",
             "Chroma",
             "Firebase",

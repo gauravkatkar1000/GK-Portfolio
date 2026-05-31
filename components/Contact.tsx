@@ -11,7 +11,7 @@ export default function Contact() {
         <div>
           <p className="text-[#94a3b8] leading-relaxed mb-6">
             I&apos;m currently open to{" "}
-            <span className="text-white">AI Solutions Developer</span> roles where I can
+            <span className="text-white">AI Solutions Developer</span>{" "}roles where I can
             architect and build intelligent systems from scratch. If you have an interesting
             problem that AI could solve, I&apos;d love to talk.
           </p>
