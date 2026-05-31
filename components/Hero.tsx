@@ -101,8 +101,8 @@ export default function Hero() {
         >
           {[
             { value: "4+", label: "Years Experience" },
-            { value: "2", label: "Production AI Systems" },
-            { value: "50+", label: "Screens Architected" },
+            { value: "3", label: "Production AI Systems" },
+            { value: "200+", label: "Documents Indexed" },
             { value: "8+", label: "Assessment Modules" },
           ].map((stat) => (
             <div key={stat.label} className="border border-[#1e2d3d] rounded-lg p-4 bg-[#0f1621]/50">

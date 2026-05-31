@@ -21,6 +21,8 @@ const SKILL_GROUPS = [
       "Pinecone & Chroma",
       "Semantic Search",
       "Embedding Systems",
+      "AWS RAG",
+      "Amazon Titan Embeddings v2",
     ],
   },
   {
@@ -30,6 +32,8 @@ const SKILL_GROUPS = [
     skills: [
       "Python",
       "Flutter / Dart",
+      "Ruby on Rails",
+      "Angular",
       "REST APIs",
       "Firebase",
       "CI/CD Pipelines",

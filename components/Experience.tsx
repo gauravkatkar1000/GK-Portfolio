@@ -1,9 +1,10 @@
 const AI_BULLETS = [
-  "Designed and implemented RAG pipelines integrating Anthropic Claude APIs to enable intelligent, document-aware AI responses within enterprise applications.",
-  "Built multi-agent AI systems to automate complex workflows, reducing manual processing time significantly.",
-  "Engineered vector database solutions (Pinecone, Chroma) for semantic search and context retrieval across large document sets.",
-  "Applied advanced prompt engineering techniques to optimise LLM outputs for structured, domain-specific tasks.",
-  "Evaluated trade-offs between RAG vs fine-tuning approaches for production AI deployments.",
+  "Architected a semantic search RAG pipeline on AWS using Amazon Titan Embedding v2 and Anthropic Claude API over a corpus of 200+ documents, with tiered retrieval fallback and confidence scoring.",
+  "Built an AI-powered pricing recommendation system using 3 years of historical data to suggest prices for new client engagements.",
+  "Designed an end-to-end recruitment intelligence pipeline: JD parsing, rubric generation, resume ingestion, AI interview question generation, async video interviews, transcript scoring, and fit recommendation.",
+  "Built multi-agent AI systems to automate complex enterprise workflows.",
+  "Applied prompt engineering to enforce strict output schemas and structured JSON responses for downstream reliability.",
+  "Worked extensively with Ruby on Rails backend and Angular frontend alongside AI integrations.",
 ];
 
 const DEV_BULLETS = [
@@ -43,8 +44,8 @@ export default function Experience() {
 
         <div className="mb-2">
           <h3 className="text-lg font-semibold text-white">
-            Senior Flutter Developer{" "}
-            <span className="text-[#22d3ee]">with AI Integration</span>
+            Senior Full Stack &{" "}
+            <span className="text-[#22d3ee]">AI Developer</span>
           </h3>
           <div className="flex flex-wrap items-center gap-3 mt-1">
             <span className="text-sm text-[#94a3b8]">Jombay · Pune, India</span>

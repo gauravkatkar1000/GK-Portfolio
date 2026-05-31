@@ -49,6 +49,12 @@ export default function Contact() {
               value: "+91 9604499373",
               href: "tel:+919604499373",
             },
+            {
+              icon: "🐙",
+              label: "GitHub",
+              value: "github.com/gauravkatkar1000",
+              href: "https://github.com/gauravkatkar1000",
+            },
           ].map((item) => (
             <div
               key={item.label}

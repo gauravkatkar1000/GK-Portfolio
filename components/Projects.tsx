@@ -1,33 +1,48 @@
 const PROJECTS = [
   {
     number: "01",
-    title: "Document Intelligence System",
-    emoji: "📄",
+    title: "Intelligent Knowledge Retrieval Engine",
+    emoji: "🔍",
     color: "#22d3ee",
     description:
-      "An end-to-end RAG pipeline for intelligent Q&A over large document collections, powered by Anthropic Claude API. Built semantic chunking, embedding, and retrieval strategies to maximise answer accuracy and minimise hallucinations.",
+      "A semantic search system over 200+ enterprise knowledge documents using RAG on AWS. Built end-to-end with Amazon Titan Embedding v2 for ingestion and Anthropic Claude API for response synthesis. Features a multi-dimensional confidence scoring engine that ranks results across use case, industry, experience level, and engagement type — with 6-tier fallback logic to always return results.",
     highlights: [
-      "End-to-end RAG pipeline using Anthropic Claude API",
-      "Vector database integration for document storage and retrieval",
-      "Semantic chunking strategy for improved context relevance",
-      "Hallucination mitigation through controlled retrieval",
+      "Amazon Titan Embedding v2 for document ingestion on AWS",
+      "Anthropic Claude API for response synthesis",
+      "Multi-dimensional confidence scoring across 4 dimensions",
+      "6-tier fallback logic ensuring results are always returned",
     ],
-    tags: ["Anthropic Claude", "RAG", "Vector DB", "Python", "Embeddings"],
+    tags: ["Anthropic Claude", "RAG", "AWS", "Vector DB", "Ruby on Rails", "Angular", "Amazon Titan v2"],
   },
   {
     number: "02",
-    title: "Multi-Agent Automation System",
-    emoji: "🤝",
+    title: "AI-Powered Pricing Intelligence System",
+    emoji: "💰",
     color: "#a78bfa",
     description:
-      "A multi-agent architecture where specialised AI agents collaborate to break down and execute complex, multi-step business workflows. Integrated agent memory, tool use, and orchestration logic to handle real-world edge cases reliably in production.",
+      "A data-driven pricing recommendation engine trained on 3 years of historical engagement data. Uses AI to identify patterns across past engagements — industry, program type, audience size, delivery model — and surfaces the most comparable reference points for new proposals. Flags edge cases where historical coverage is insufficient.",
     highlights: [
-      "Specialised agents with distinct roles and capabilities",
-      "Agent memory for stateful, context-aware execution",
-      "Tool use integration for real-world action execution",
-      "Orchestration layer for reliable edge case handling",
+      "3 years of historical engagement data as training signal",
+      "Pattern matching across industry, program type, audience size",
+      "Comparable reference surfacing for new proposals",
+      "Edge case flagging when historical coverage is insufficient",
     ],
-    tags: ["Multi-Agent", "Anthropic Claude", "Agent Memory", "Tool Use", "Python"],
+    tags: ["AI", "Python", "Ruby on Rails", "Data Analysis", "LLM"],
+  },
+  {
+    number: "03",
+    title: "Recruitment Intelligence Pipeline",
+    emoji: "🧠",
+    color: "#34d399",
+    description:
+      "End-to-end AI recruitment system: JD upload → competency framework and rubric generation → resume ingestion → personalised interview question generation → async video interview (mobile app) → transcript scoring → candidate fit recommendation. Each layer — extraction, reasoning, scoring, recommendation — is independently testable.",
+    highlights: [
+      "JD parsing → competency framework and rubric generation",
+      "Resume ingestion with personalised interview question generation",
+      "Async video interview via Flutter mobile app",
+      "Transcript scoring and candidate fit recommendation",
+    ],
+    tags: ["Anthropic Claude", "RAG", "Python", "Flutter", "LLM", "Prompt Engineering", "Ruby on Rails"],
   },
 ];
 
@@ -41,7 +56,7 @@ export default function Projects() {
           <div className="flex-1 h-px bg-[#1e2d3d]" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {PROJECTS.map((project) => (
             <div
               key={project.number}

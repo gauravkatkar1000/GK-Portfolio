@@ -20,6 +20,14 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            href="https://github.com/gauravkatkar1000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-[#64748b] hover:text-[#22d3ee] transition-colors font-mono"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </footer>

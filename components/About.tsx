@@ -12,21 +12,11 @@ export default function About() {
           <p>
             I approach AI development the way I approach all engineering —{" "}
             <span className="text-white">starting from the problem, not the technology</span>.
-            With hands-on experience building production AI systems using Anthropic APIs, RAG,
-            and multi-agent architectures, I bring both the technical depth and the
-            solution-design mindset that AI roles demand.
-          </p>
-          <p>
-            Currently working as a{" "}
-            <span className="text-[#22d3ee]">Senior Flutter Developer with AI Integration</span>{" "}
-            at Jombay, where I design and implement intelligent, document-aware AI responses
-            within enterprise applications and automate complex workflows using multi-agent
-            systems.
-          </p>
-          <p>
-            I am particularly strong at identifying where AI adds real value versus where simpler
-            solutions suffice — and that judgement is what separates engineers who ship from
-            those who over-engineer.
+            Over the last year I have designed and shipped three production AI systems end-to-end:
+            a semantic knowledge retrieval engine, an AI-powered pricing intelligence system, and
+            a full recruitment intelligence pipeline with async video interviews and AI candidate
+            scoring. I bring both the technical depth and the solution-design mindset that AI
+            roles demand.
           </p>
         </div>
 
@@ -34,9 +24,9 @@ export default function About() {
           {[
             { icon: "📍", label: "Location", value: "Pune, India" },
             { icon: "🎓", label: "Education", value: "B.E. Computer Science, JSCOE Pune (2021)" },
-            { icon: "🏢", label: "Current Role", value: "Senior Flutter Developer @ Jombay" },
+            { icon: "🏢", label: "Current Role", value: "Senior Full Stack & AI Developer @ Jombay" },
             { icon: "📧", label: "Email", value: "gauravkatkar1000@gmail.com" },
-            { icon: "💼", label: "Open to", value: "AI Solutions Developer roles" },
+            { icon: "💼", label: "Open to", value: "AI Solutions Developer / GenAI Engineer roles" },
           ].map((item) => (
             <div
               key={item.label}
