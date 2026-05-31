@@ -72,7 +72,7 @@ export default function Projects() {
           <div className="flex-1 h-px bg-[#1e2d3d]" />
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {PROJECTS.map((project) => (
             <div
               key={project.number}
