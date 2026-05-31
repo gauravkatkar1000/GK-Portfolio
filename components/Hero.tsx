@@ -116,6 +116,16 @@ export default function Hero() {
           >
             Get in Touch →
           </a>
+          <a
+            href="/Gaurav_Katkar_Resume.pdf"
+            download="Gaurav_Katkar_Resume.pdf"
+            className="text-sm font-medium tracking-[0.1em] uppercase transition-colors duration-300"
+            style={{ color: "var(--muted)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+          >
+            Resume ↓
+          </a>
         </motion.div>
 
         {/* Stats */}
