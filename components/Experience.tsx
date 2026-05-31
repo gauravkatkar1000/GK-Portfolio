@@ -24,7 +24,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="space-y-5">
       {items.map((item, i) => (
-        <li key={i} className="flex gap-4 text-[13px] leading-relaxed" style={{ color: "#aaaaaa" }}>
+        <li key={i} className="flex gap-4 text-sm leading-relaxed" style={{ color: "#b0b0b0" }}>
           <span
             className="mt-2 w-1 h-1 rounded-full shrink-0"
             style={{ background: "var(--accent)", opacity: 0.6 }}

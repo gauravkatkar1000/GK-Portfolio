@@ -133,9 +133,10 @@ export default function Projects() {
                     </div>
                     {project.live && (
                       <span
-                        className="inline-block text-[9px] tracking-[0.2em] uppercase px-2 py-0.5 rounded-sm"
-                        style={{ border: "1px solid var(--accent)", color: "var(--accent)", opacity: 0.8 }}
+                        className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.15em] uppercase px-2.5 py-1 rounded-sm"
+                        style={{ background: "var(--accent)", color: "#fff" }}
                       >
+                        <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
                         Live
                       </span>
                     )}

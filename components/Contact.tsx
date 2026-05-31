@@ -19,7 +19,7 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+        <div className="grid md:grid-cols-[1fr_420px] gap-16 md:gap-20">
 
           {/* Left: big heading */}
           <motion.div variants={fade} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-60px" }}>
