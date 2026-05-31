@@ -22,9 +22,9 @@ const DEV_BULLETS = [
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-5">
+    <ul className="space-y-6">
       {items.map((item, i) => (
-        <li key={i} className="flex gap-4 text-sm leading-relaxed" style={{ color: "#b0b0b0" }}>
+        <li key={i} className="flex gap-4 text-[15px] leading-[1.75]" style={{ color: "#b8b8b8" }}>
           <span
             className="mt-2 w-1 h-1 rounded-full shrink-0"
             style={{ background: "var(--accent)", opacity: 0.6 }}
@@ -76,7 +76,7 @@ export default function Experience() {
           </div>
 
           {/* Bullets */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-2 gap-14 md:gap-20">
             <div>
               <div
                 className="text-[10px] tracking-[0.15em] uppercase mb-6 pb-4"
