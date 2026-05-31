@@ -49,15 +49,27 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a
-          href="mailto:gauravkatkar1000@gmail.com"
-          className="hidden md:block text-[11px] font-medium tracking-[0.12em] uppercase transition-colors duration-300"
-          style={{ color: "var(--accent)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--accent)")}
-        >
-          Hire Me
-        </a>
+        <div className="hidden md:flex items-center gap-6">
+          <a
+            href="/Gaurav_Katkar_Resume.pdf"
+            download="Gaurav_Katkar_Resume.pdf"
+            className="text-[11px] font-medium tracking-[0.12em] uppercase transition-colors duration-300"
+            style={{ color: "var(--muted)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+          >
+            Resume ↓
+          </a>
+          <a
+            href="mailto:gauravkatkar1000@gmail.com"
+            className="text-[11px] font-medium tracking-[0.12em] uppercase transition-colors duration-300"
+            style={{ color: "var(--accent)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--accent)")}
+          >
+            Hire Me
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
